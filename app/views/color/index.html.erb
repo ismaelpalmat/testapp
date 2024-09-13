@@ -1,0 +1,19 @@
+<form action="/color/create" method="get">
+    <input name="name">
+    <input type="color" name="hexadecimal">
+    <input type="hidden" name="method" value="get">
+    <input type="submit" value="Guardar">   
+</form>
+<ul>  
+<% @colors.each do |color| %>
+    <li><%= color.id %>, <%=color.name %>, <%=color.hexadecimal %>, <div style="background-color: <%=color.hexadecimal %>; width: 20px; height: 20px; display: inline-block"></div> <small><%= color.method %></small> </li>
+<% end %>
+</ul>
+
+----
+<form action="/color/create" method="post">
+    <input name="name">
+    <input type="color" name="hexadecimal">
+    <input type="hidden" name="method" value="post">
+    <input type="submit" value="Guardar">   
+</form>
